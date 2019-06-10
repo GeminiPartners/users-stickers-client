@@ -10,11 +10,19 @@ $(() => {
             password
         }
 
-        login(user);
+        login(user)
+            .then(result => {
+                console.log(result);
+                window.location = `/user.html?id=${result.id}`;
+            }).catch(error => {
+                console.error(error);
+                const $errorMessage = $('#errorMessage');
+                $errorMessage.text(error.responseJSON.message);
+                $errorMessage.show()
+            });
     });
 });
 
 function login(user) {
-    console.log(`${AUTH_URL}/login`);
-    // return $.post('${AUTH_URL}/login')
+    return $.post(`${AUTH_URL}/login`, user);
 }
