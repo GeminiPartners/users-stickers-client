@@ -2,19 +2,20 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Stickers</title>
+    <title>Community Share</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/style.css">
   </head>
   <body class="container">
     <header class="page-header">
-      <h1>Stickers</h1>
+      <h1>Home Page</h1>
       <a class="btn btn-success" href="/index.html">Home</a>
     </header>
     <main>
       <section class="user">
 
       </section>
-      <section class="stickers">
+      <section class="items">
 
       </section>
     </main>
@@ -22,22 +23,43 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
     <script src="./scripts/shared.js"></script>
     <script src="./scripts/user.js"></script>
+
     <script id="user-template" type="text/x-handlebars-template">
-      <h1> {{email}} </h1>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <div> Username: {{username}} </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div>Email: {{email}} </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div>Location: {{location}} </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div>Instructions: {{instructions_default}} </div>
+          </div>
+        </div>      
     </script>
-    <script id="sticker-template" type="text/x-handlebars-template">
-      <div class="row">
-        {{#each stickers}}
-            <div class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <img src="{{this.image_url}}" alt="{{description}}">
-                <div class="caption">
-                  <h3>{{description}}</h3>
-                </div>
+    <script id="item-template" type="text/x-handlebars-template">
+      <div class="container-fluid">
+        <div class="row row-eq-height">
+          {{#each items}}
+          <div class="col">
+            <div class="card card-list" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">{{name}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{description}}</h6>
+                <p class="card-text">{{instructions}}</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
               </div>
-            </div>
-        {{/each}}
+            </div> 
+          </div>            
+          {{/each}}
+        </div>
       </div>
+
     </script>
   </body>
 </html>

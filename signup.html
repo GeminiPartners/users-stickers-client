@@ -2,12 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Stickers</title>
+    <title>Community Share</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body class="container">
     <header class="page-header">
-      <h1>Sticker Mania Signup</h1>
+      <h1>Community Share Signup</h1>
       <a class="btn btn-primary" href="/index.html">Home</a>
     </header>
 
@@ -22,10 +22,22 @@
           <div class="form-group">
               <label for="password">Password</label>
               <input type="password" class="form-control" id="password" placeholder="keyboard cat" required>
-            </div>
-            <button type="submit" class="btn btn-default btn-success">
-              Signup
-            </button>
+          </div>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="string" class="form-control" id="username" placeholder="Username" required>
+          </div>
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input type="string" class="form-control" id="location" placeholder="Location" required>
+          </div>
+          <div class="form-group">
+            <label for="instructions_default">Instructions</label>
+            <input type="string" class="form-control" id="instructions_default" placeholder="Instructions" required>
+          </div>
+          <button type="submit" class="btn btn-default btn-success">
+            Signup
+          </button>
         </form>
       </section>
     </main>

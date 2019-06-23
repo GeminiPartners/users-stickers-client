@@ -1,7 +1,9 @@
-$.ajaxSetup({
+$.ajaxSetup({  
+  
     xhrFields: {
         origin: 'http://127.0.0.1:8080',
-        withCredentials: true
+        withCredentials: true,
+        auth_token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJpc19hY3RpdmUiOnRydWV9.0RNrDn6qxLwpE8Zvrj7NWa2Uh-Aapmw6oOyXHVHCaOs"
     }
 })
 
@@ -14,22 +16,45 @@ function getHostURL() {
     // } else {
     //   return 'https://sticker-mania.herokuapp.com';
     // }
-  }
+  };
 
-  function getUserFromForm () {
-    const email = $('#email').val();
-    const password = $('#password').val();
+function getUserFromForm () {
+  const email = $('#email').val();
+  const password = $('#password').val();
+  const username = $('#username').val();
+  const location = $('#location').val();
+  const instructions_default = $('#instructions_default').val();
 
-    const user = {
-        email,
-        password
-    };
+  const user = {
+      email,
+      password,
+      username,
+      location,
+      instructions_default
+  };
 
-    return user
-  }
+  console.log(user);
+
+  return user
+}
+
+function getLoginFromForm () {
+  const email = $('#email').val();
+  const password = $('#password').val();
+
+
+  const user = {
+      email,
+      password
+  };
+
+  console.log(user);
+
+  return user
+}
   
-  function showErrorMessage(message) {
-    const $errorMessage = $('#errorMessage');
-    $errorMessage.text(message);
-    $errorMessage.show()
-  }
+function showErrorMessage(message) {
+  const $errorMessage = $('#errorMessage');
+  $errorMessage.text(message);
+  $errorMessage.show()
+}

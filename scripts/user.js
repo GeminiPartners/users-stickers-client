@@ -2,10 +2,15 @@ $(document).ready(function () {
   // get user id from url query
   const params = parseQuery(window.location.search);
   // make a request to the server for the user information
-  getUserInfo(params.id)
-    .then(addUserInfoToPage)
-    .then(getStickers)
-    .then(addStickers)
+  getUserInfo()
+    .then(user => {
+      console.log('user is: ', user);
+      addUserInfoToPage(user)
+    })
+    .then(getItems)
+    .then(items => {
+      addItems(items);
+    } )
     .catch(handleError);
   // show user information
   // make a request to server for the stickers for the user with that id
@@ -20,12 +25,12 @@ function parseQuery(query) {
   }, {});
 }
 
-function getUserInfo(id) {
-  return $.get(`${API_URL}/user/${id}`)
+function getUserInfo() {
+  return $.get(`${API_URL}/user`)
 }
 
-function getStickers(id) {
-  return $.get(`${API_URL}/user/${id}/sticker`)
+function getItems() {
+  return $.get(`${API_URL}/user/item`)
 }
 
 function addUserInfoToPage(user) {
@@ -37,17 +42,18 @@ function addUserInfoToPage(user) {
   return user.id;
 }
 
-function addStickers(stickers) {
-  let source = $("#sticker-template").html();
+function addItems(items) {
+  let source = $("#item-template").html();
   let template = Handlebars.compile(source);
-  let context = {stickers};
+  // let context = items;
   // yay more variations!! abstraction rocks!
-  // let context = {stickers: stickers};
+  let context = {items: items};
   let html = template(context);
-  $('.stickers').html(html);
+  $('.items').html(html);
 }
 
 function handleError(error) {
-  window.location= '/login.html';
+  window.location= '/login.html'
+  console.log('error: ', error)
 };
 

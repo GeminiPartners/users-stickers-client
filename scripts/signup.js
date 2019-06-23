@@ -7,7 +7,7 @@ $(() => {
         signup(user)
             .then(result => {
                 console.log(result);
-                window.location = `/user.html?id=${result.id}`;
+                window.location = `/login`;
             }).catch(error => {
                 console.error(error)
                 showErrorMessage(error.responseJSON.message);
