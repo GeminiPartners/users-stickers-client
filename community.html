@@ -21,8 +21,8 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a class="nav-item nav-link" href="/index.html">Home</a>
-            <a class="nav-item nav-link active" href="#">User <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="community.html?id=2">Community</a>
+            <a class="nav-item nav-link" href="/user.html">User</a>
+            <a class="nav-item nav-link active" href="#">Community <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
           </div>
         </div>
@@ -33,7 +33,7 @@
       <div class="page_body">
         <section class="heading">
           <div class="container-fluid">
-            <h1 id="header1">Home Page</h1>
+            <h1 id="header1">Community Page</h1>
           </div>
         </section>
         
@@ -48,22 +48,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
     <script src="./scripts/shared.js"></script>
-    <script src="./scripts/user.js"></script>
+    <script src="./scripts/community.js"></script>
 
-    <script id="user-template" type="text/x-handlebars-template">
+    <script id="community-template" type="text/x-handlebars-template">
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-6 col-md-4">
-            <div><strong>Username:</strong> {{username}} </div>
+            <div><strong>Name:</strong> {{name}} </div>
           </div>
           <div class="col-sm-6 col-md-4">
-            <div><strong>Email:</strong> {{email}} </div>
+            <div><strong>Description:</strong> {{description}} </div>
           </div>
           <div class="col-sm-6 col-md-4">
-            <div><strong>Location:</strong> {{location}} </div>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <div><strong>Instructions:</strong> {{instructions_default}} </div>
+            <div><strong>Community Type:</strong> {{community_type}} </div>
           </div>
         </div>      
     </script>
