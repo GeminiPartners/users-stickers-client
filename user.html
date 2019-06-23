@@ -12,6 +12,7 @@
       <a class="btn btn-success" href="/index.html">Home</a>
     </header>
     <main>
+        
       <section class="user">
 
       </section>
@@ -28,22 +29,22 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-6 col-md-4">
-            <div> Username: {{username}} </div>
+            <div><strong>Username:</strong> {{username}} </div>
           </div>
           <div class="col-sm-6 col-md-4">
-            <div>Email: {{email}} </div>
+            <div><strong>Email:</strong> {{email}} </div>
           </div>
           <div class="col-sm-6 col-md-4">
-            <div>Location: {{location}} </div>
+            <div><strong>Location:</strong> {{location}} </div>
           </div>
           <div class="col-sm-6 col-md-4">
-            <div>Instructions: {{instructions_default}} </div>
+            <div><strong>Instructions:</strong> {{instructions_default}} </div>
           </div>
         </div>      
     </script>
     <script id="item-template" type="text/x-handlebars-template">
       <div class="container-fluid">
-        <div class="row row-eq-height">
+        <div class="row" id="collapseExample">
           {{#each items}}
           <div class="col">
             <div class="card card-list" style="width: 18rem;">
