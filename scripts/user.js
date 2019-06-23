@@ -34,6 +34,8 @@ function getItems() {
 }
 
 function addUserInfoToPage(user) {
+  const headerText = user.username + ' Homepage';
+  document.getElementById("header1").innerHTML = headerText;
   let source = $("#user-template").html();
   let template = Handlebars.compile(source);
   let context = user;
