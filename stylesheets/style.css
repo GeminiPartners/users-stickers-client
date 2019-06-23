@@ -1,4 +1,4 @@
-.row {background-color: #afbfba;
+.page_body {background-color: #f8f9fa;
     margin-top: 0.5rem;}
 
 .row-eq-height {
@@ -8,7 +8,7 @@
     display:         flex;
     }
 
-.col {background-color: #b0c1c9;
+.col {background-color: #b0c1c955;
    margin: 5px}
 
 .card-list {
