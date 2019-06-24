@@ -15,4 +15,25 @@
     margin: 0;
     padding: 0;
     background-color: transparent;
-    border: 0}
+    border: 0};
+
+.leftheader {
+    float: left
+}
+
+.rightheader {
+    float: right;
+    vertical-align: middle
+}
+
+.flex-box-2 {
+    display:flex;
+    justify-content: flex-end;
+}
+
+.comm {
+    background-color: #afbfba;
+    border: 0;
+    margin: 5px
+}
+

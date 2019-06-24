@@ -12,35 +12,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body class="container">
-    <header class="page-header">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-item nav-link" href="/index.html">Home</a>
-            <a class="nav-item nav-link" href="/user.html">User</a>
-            <a class="nav-item nav-link active" href="#">Community <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </div>
-        </div>
-      </nav>
-      
-    </header>
+        <header class="page-header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link" href="/index.html">Home</a>
+                <a class="nav-item nav-link" href="/user.html">User</a>
+                <a class="nav-item nav-link active" href="#">Community <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </div>
+            </div>
+          </nav>
+          
+        </header>
     <main>
-      <div class="page_body">
-        <section class="heading">
-          <div class="container-fluid">
-            <h1 id="header1">Community Page</h1>
-          </div>
-        </section>
-        
-        <section class="user">
+          <div class="page_body">
+            <section class="heading">
+                <div class="flex-box-2">
+                    <div class="container-fluid">
+                        <h1 id="header1">Select a community</h1>
+                    </div>
+                 
+                                <div class="btn-group dropdown ">
+                                    <button type="button" class="btn btn-secondary dropdown-toggle comm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Change Community
+                                    </button>
+                                    <div id="communitydropdown" class="dropdown-menu" x-placement="right-start" style="position: absolute; transform: translate3d(111px, 0px, 0px); top: 0px; left: 0px; will-change: transform;">
+
+                                        <a class="dropdown-item" href="#"></a>
+
+                                    </div>
+                                </div>                   
+
+                </div>
+            </section>
+
+       
+        <section class="community">
 
         </section>
-        <section class="items">
+        <section class="categories">
 
         </section>
       </div>
@@ -53,28 +68,23 @@
     <script id="community-template" type="text/x-handlebars-template">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-sm-6 col-md-4">
-            <div><strong>Name:</strong> {{name}} </div>
+          <div class="col-12">
+            <div>{{description}} </div>
           </div>
-          <div class="col-sm-6 col-md-4">
-            <div><strong>Description:</strong> {{description}} </div>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <div><strong>Community Type:</strong> {{community_type}} </div>
-          </div>
-        </div>      
+        </div>  
+      </div>
     </script>
-    <script id="item-template" type="text/x-handlebars-template">
+    <script id="category-template" type="text/x-handlebars-template">
       <div class="container-fluid">
         <div class="row" id="collapseExample">
-          {{#each items}}
+          {{#each categories}}
           <div class="col">
             <div class="card card-list" style="width: 18rem;">
               <div class="card-body">
                 <h5 class="card-title">{{name}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">{{description}}</h6>
-                <p class="card-text">{{instructions}}</p>
-                <a href="#" class="card-link">Details</a>
+                <h6 class="card-subtitle mb-2 text-muted">{{order}}</h6>
+                <!-- <p class="card-text">{{instructions}}</p> -->
+                <a href={{link}} class="card-link">Details</a>
               </div>
             </div> 
           </div>            

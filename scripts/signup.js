@@ -1,4 +1,9 @@
+$(document).ready(function () {
+    console.log('that worked?');
+    return true
+});
 $(() => {
+    console.log('loaded!')
     $('form').submit((event) => {
         event.preventDefault();
         const user = getUserFromForm();
