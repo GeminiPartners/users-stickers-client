@@ -82,7 +82,7 @@
             <div class="card card-list" style="width: 18rem;">
               <div class="card-body">
                 <h5 class="card-title">{{name}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">{{order}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">Number of items: {{count}}</h6>
                 <!-- <p class="card-text">{{instructions}}</p> -->
                 <a href={{link}} class="card-link">Details</a>
               </div>
@@ -90,6 +90,13 @@
           </div>            
           {{/each}}
         </div>
+        {{#unless categories}}
+        <div class="card card-list" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">No items to display!</h5>
+            </div>
+        </div> 
+        {{/unless}}
       </div>
 
     </script>
