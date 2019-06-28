@@ -36,7 +36,7 @@ $(document).ready(function () {
       var communities_html = "";
       communities.forEach(community => {
           communities_html = communities_html + 
-          '<a class="dropdown-item" href="community?id=' + community.id +
+          '<a class="dropdown-item" href="index.html?id=' + community.id +
           '">' + community.name + '</a>';        
         });
         document.getElementById("communitydropdown").innerHTML = communities_html;
@@ -58,12 +58,12 @@ $(document).ready(function () {
     let html = template(context);
     $('.community').html(html);
     return community.community_id;
-    return true
+    
   }
 
   function addCategories(categories) {
     categories.forEach(category => {
-        category.link = 'category.html?id=' + category.id
+        category.link = '../category.html?id=' + category.id
     })
     let source = $("#category-template").html();
     console.log('categories source', source)
