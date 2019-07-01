@@ -8,11 +8,8 @@ $(() => {
 
         create(community)
             .then(result => {
-                console.log(result);
-                return addItemCategories(result, protoCommunityId)                
-            })
-            .then(result => {
-                communityPage = 'index.html?id=' + result;
+                console.log('result to this is:', result)
+                communityPage = 'index.html?id=' + result.id;
                 window.location = communityPage;
             }) 
             .catch(error => {
@@ -23,18 +20,15 @@ $(() => {
 });
 
 function getCommunityFromForm () {
-    const email = $('#name').val();
-    const password = $('#description').val();
-    const username = $('#community_type').val();
+    const name = $('#name').val();
+    const description = $('#description').val();
+    const community_type = 1
     const location = $('#location').val();
-    const instructions_default = $('#instructions_default').val();
   
     const community = {
-        email,
-        password,
-        username,
-        location,
-        instructions_default
+        name,
+        description,
+        community_type
     };
   
     console.log(community);
@@ -42,6 +36,15 @@ function getCommunityFromForm () {
     return community
   }
 
+// function create(community) {
+//     return $.post(`${API_URL}/community/create`, user)
+// }
+
 function create(community) {
-    return $.post(`${API_URL}/community/create`, user)
+  return $.ajax({    
+    dataType: 'json',
+    data: community,
+    type: 'POST',
+    url: `${API_URL}/community/create`
+  });
 }

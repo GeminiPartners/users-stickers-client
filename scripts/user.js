@@ -29,6 +29,15 @@ function getUserInfo() {
   return $.get(`${API_URL}/user`)
 }
 
+
+
+// function getUserInfo() {
+//   return $.ajax({    
+//     type: 'GET',
+//     url: `${API_URL}/user`
+//   });
+// }
+
 function getItems() {
   return $.get(`${API_URL}/user/item`)
 }
