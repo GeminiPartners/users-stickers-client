@@ -2,8 +2,7 @@ $.ajaxSetup({
   
     xhrFields: {
         origin: 'http://127.0.0.1:8080',
-        withCredentials: true,
-        auth_token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJpc19hY3RpdmUiOnRydWV9.0RNrDn6qxLwpE8Zvrj7NWa2Uh-Aapmw6oOyXHVHCaOs"
+        withCredentials: true
     }
 })
 
